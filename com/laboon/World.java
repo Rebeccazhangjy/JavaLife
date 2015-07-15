@@ -114,21 +114,43 @@ public class World {
 	 * @return String representation of world
 	 */
 	
+	// Refactored Method
+	
 	public String toString() {
-		String toReturn = "  ";
+		StringBuilder result = new StringBuilder();
+		result.append("  ");
 		for (int j= 0; j < _size; j++) {
-			toReturn += String.valueOf(j % 10);
+			result.append(String.valueOf(j % 10));
 		}
-		toReturn += "\n";
+		result.append("\n");
 		for (int j = 0; j < _size; j++ ) {
-			toReturn += String.valueOf(j % 10) + " ";
+			result.append(String.valueOf(j % 10) + " ");
 			for (int k = 0; k < _size; k++) {
-				toReturn += (_world[j][k].getStateRep());
+				result.append(_world[j][k].getStateRep());
 			}
-			toReturn += "\n";
+			result.append("\n");
 		}
+		String toReturn = result.toString();
 		return toReturn;
 	}
+	
+	// Original method
+	
+//	public String toString() {
+//		String toReturn = "  ";
+//		for (int j= 0; j < _size; j++) {
+//			toReturn += String.valueOf(j % 10);
+//		}
+//		toReturn += "\n";
+//		for (int j = 0; j < _size; j++ ) {
+//			toReturn += String.valueOf(j % 10) + " ";
+//			for (int k = 0; k < _size; k++) {
+//				toReturn += (_world[j][k].getStateRep());
+//			}
+//			toReturn += "\n";
+//		}
+//		return toReturn;
+//	}
 	
 	/**
 	 * Generate initial game board.

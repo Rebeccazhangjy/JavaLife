@@ -51,6 +51,7 @@ public class JavaLife {
 	 */
 	
 	public static void main(String[] args) {
+		long startTime = System.currentTimeMillis();
 		if (args.length != 4) {
 			System.err.println(getErrMessage());
 			System.exit(1);
@@ -71,6 +72,8 @@ public class JavaLife {
 			System.exit(1);
 		}
 		JavaLife jl = new JavaLife(size, seed, percent, maxIterations);
+		long endTime = System.currentTimeMillis() - startTime;
+		System.out.println(endTime);
 	}
 
 }
